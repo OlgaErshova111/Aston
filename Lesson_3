@@ -1,0 +1,50 @@
+/*1. Создать класс "Сотрудник" с полями: ФИО, должность, email, телефон, зарплата, возраст. 
+Конструктор класса должен заполнять эти поля при создании объекта. 
+Внутри класса «Сотрудник» написать метод, который выводит информацию об объекте в консоль.
+2. Создать массив из 5 сотрудников. 
+3. Создать класс Park с внутренним классом, с помощью объектов которого можно хранить информацию
+об аттракционах, времени их работы и стоимости. */
+
+
+public class Lesson3 {
+	public static void main(String[] args) {
+		Person[] persArray = new Person[5];
+			persArray[0] = new Person("Ivanov Ivan", "Engineer", "ivivan@mailbox.com", "892312312",30000,30);
+			persArray[1] = new Person("Petrov Petr", "Disigner", "petrov@mailbox.com", "892312314",30000,22);
+			persArray[2] = new Person("Sidorov Simon", "Driver", "sidorov@mailbox.com", "892312315",20000,45);
+			persArray[3] = new Person("Smirnova Irina", "Manager", "smirnova@mailbox.com", "892312316",50000,29);
+			persArray[4] = new Person("Kostina Vera", "Manager", "kostina@mailbox.com", "892312317",40000,21);
+        for (Person person : persArray)
+    		System.out.println(person);
+
+    }
+}
+class Person {
+    private String name;
+    private String position;
+    private String email;
+    private String phone;
+    private int salary;
+    private int age;
+
+	public Person(String name, String position, String email, String phone, int salary, int age) {
+	this.name = name;
+    this.position = position;
+    this.email = email;
+    this.phone = phone;
+    this.salary = salary;
+    this.age = age;
+	} 
+    public int getAge() {
+		return age;
+	}
+	@Override
+	public String toString(){
+		return(name+ "\n-"
+			+position+ "\n-"
+			+email+ "\n-"
+			+phone+ "\n-"
+			+salary+ "\n-"
+			+age);
+	}
+}
